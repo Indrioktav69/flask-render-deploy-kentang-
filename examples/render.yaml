@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: flask-app
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn main:app
+    envVars:
+      - key: BLYNK_AUTH_TOKEN
+        value: ZD51pvBe0V6Hjfq96Xj3nqYgwsXX407u
+      - key: BLYNK_SERVER
+        value: https://blynk.cloud
+      - key: VIRTUAL_PIN
+        value: V1
+      - key: SERVER_ADDRESS
+        value: https://your-app-name.onrender.com
